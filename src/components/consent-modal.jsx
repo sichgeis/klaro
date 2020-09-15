@@ -2,7 +2,7 @@ import React from 'react'
 import {Close} from './icons'
 import Apps from './apps'
 import Purposes from './purposes'
-import {language} from 'utils/i18n'
+import {language} from '../utils/i18n'
 import Text from './text'
 
 export default class ConsentModal extends React.Component {
@@ -61,7 +61,7 @@ export default class ConsentModal extends React.Component {
         else
             appsOrPurposes = <Apps t={t} config={config} manager={manager} />
 
-        const innerModal = <div className="cm-modal">
+        const innerModal = <div className="cm-modal cm-klaro">
             <div className="cm-header">
                 {closeLink}
                 <h1 className="title">{t(['consentModal', 'title'])}</h1>

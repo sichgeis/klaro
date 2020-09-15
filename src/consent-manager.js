@@ -1,6 +1,6 @@
 import {getCookies, deleteCookie} from 'utils/cookies'
 import {dataset, applyDataset} from 'utils/compat'
-import stores from 'stores'
+import stores, { SessionStorageStore } from 'stores'
 
 export default class ConsentManager {
 
@@ -12,6 +12,8 @@ export default class ConsentManager {
         // we fall back to the cookie-based store if the store is undefined
         if (this.store === undefined)
             this.store = stores['cookie']
+
+        this.auxiliaryStore = new SessionStorageStore(this)
 
         this.consents = this.defaultConsents // the consent states of the configured apps
         this.confirmed = false // true if the user actively confirmed his/her consent
@@ -131,18 +133,28 @@ export default class ConsentManager {
         return this.consents
     }
 
-    saveAndApplyConsents(){
-        this.saveConsents()
+    saveAndApplyConsents(eventType){
+        this.saveConsents(eventType)
         this.applyConsents()
     }
 
-    saveConsents(){
+    changedConsents(){
+        const cc = {}
+        for(const [k, v] of Object.entries(this.consents)){
+            if (this.savedConsents[k] !== v)
+                cc[k] = v
+        }
+        return cc
+    }
+
+    saveConsents(eventType){
         const v = encodeURIComponent(JSON.stringify(this.consents))
         this.store.set(v);
         this.confirmed = true
         this.changed = false
+        const changes = this.changedConsents()
         this.savedConsents = {...this.consents}
-        this.notify('saveConsents', this.consents)
+        this.notify('saveConsents', {changes: changes, consents: this.consents, type: eventType})
     }
 
     applyConsents(dryRun){
@@ -275,6 +287,11 @@ export default class ConsentManager {
                 let cookiePath, cookieDomain
                 if (cookiePattern instanceof Array){
                     [cookiePattern, cookiePath, cookieDomain] = cookiePattern
+                } else if (cookiePattern instanceof Object && !(cookiePattern instanceof RegExp)){
+                    const cp = cookiePattern
+                    cookiePattern = cp.pattern
+                    cookiePath = cp.path
+                    cookieDomain = cp.domain
                 }
                 if (!(cookiePattern instanceof RegExp)){
                     cookiePattern = new RegExp('^'+escapeRegexStr(cookiePattern)+'$')

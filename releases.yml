@@ -1,20 +1,337 @@
 - changelog:
-    de: "- Formatierung der \xDCbersetzungen verbessert und Informationen zu fehlenden\
-      \ \xDCbersetzungs-Strings hinzugef\xFCgt.\n- Klaro-Bin\xE4rdateien / Distribution-Dateien\
-      \ werden wieder eingeschlossen.\n"
+    de: '- Änderung der Art, wie das "show" Event erfasst wird.
+
+      '
+    en: '- Changed the way the "show" event is counted.
+
+      '
+  date: '2020-09-13'
+  files:
+  - name: klaro.js
+    sha384: QOTDE9H5QhpXgRb1/2OvtY0R9aH1t5jCovG30Us2sjCdW6RVhiUs5iQtzWKDqMiv
+  - name: klaro.min.css
+    sha384: lrdVbYPK4A+w7UJ6JOa6glQdQTspZwDGDtR1Z/NJHH9uNOWvhLnjb7zYwiGNlyyz
+  - name: ide.js
+    sha384: W/GKOXlwNRfdHq6EBVemkSDgLNH/9h/BoS8EgLPWFI9tWdiYZbMDeaiJa1t8067N
+  - name: translations.js
+    sha384: kfS81PYZJj9e2jBmoyZQ9yv6RU8qEoVPsRRZ3GJ4ZnYSzUB3XdQmjq4M/SrnNb2M
+  - name: klaro-no-translations.js
+    sha384: pIKiEu1b9NfRDy+xzMuuvsIHIhBAo5THljl3q6XdQI+1Cbr49ZjvObYbbyndr85/
+  - name: klaro.css
+    sha384: WJ3oj78uTzSYs0/twrjWIyxAtDw7tQduHDwt/gBWW9xgLVMjxxaQJW+tVbSCwmH6
+  - name: cm.js
+    sha384: RarTnM8frjR2rlkX4I27CEbpG7xPkX23Hi9qN190+owiGdu1vj6v52m5a7frWJp2
+  - name: klaro-no-translations-no-css.js
+    sha384: yXxtR+zd+TBD66wbCVsys608numKbl5dTRUxUEbgTRNCGyhcIQ8zya6bxsJh0yWP
+  - name: klaro-no-css.js
+    sha384: Esf5DqsTPDHEBTEHF18EP1exUXiOR80W7e277qKQ8W7DB+9f9aKoPAD+4Mz7kWb7
+  tags:
+  - improvements
+  version: 0.6.13
+- changelog:
+    de: '- Anpassung der API-Endpunkt-URLs an das neue Format (`privacy-manager` statt
+      `consent-manager`).
+
+      '
+    en: '- Changing API endpoint URLs to the new format (`privacy-manager` instead
+      of `consent-manager`)
+
+      '
+  date: '2020-09-13'
+  files:
+  - name: klaro.js
+    sha384: SvV5xKvv+dSaohsjWJEJe/iKToGRlGDRDJUhH4VS5K3Wmx22At5WQBpCORbrxWII
+  - name: klaro.min.css
+    sha384: lrdVbYPK4A+w7UJ6JOa6glQdQTspZwDGDtR1Z/NJHH9uNOWvhLnjb7zYwiGNlyyz
+  - name: ide.js
+    sha384: IolQCVPfRll773yDTkoZFhDVfhfhnGiEy82r9jqvw6+DQO+GWDxb5/HupdsfaWcT
+  - name: translations.js
+    sha384: 8bSN9v9aRL0g93KQNZVe5aRfzohK2hjutIUfb0o9QPnz15azs5cJusOaWQweopzu
+  - name: klaro-no-translations.js
+    sha384: tHas77roVQMkjXXhZeCxaMM+sNI77Hr5c+5rBVR6p56BacRQQMbEREZi5JtjpPXU
+  - name: klaro.css
+    sha384: WJ3oj78uTzSYs0/twrjWIyxAtDw7tQduHDwt/gBWW9xgLVMjxxaQJW+tVbSCwmH6
+  - name: cm.js
+    sha384: 0nX01D4fXY7pKX9QHbFcS5zlSuvaaUXs4U/u/7HKeVKKG9uMp+Ush4iEOTUkq9Of
+  - name: klaro-no-translations-no-css.js
+    sha384: JohVmq+EsCcEnHCqoPJW5dSFBSFG6ttMb1O5Gk2f/7ZYvlJTAWXbtD8MsoYHEu93
+  - name: klaro-no-css.js
+    sha384: wq12Ehq+2bU0c9/YQmRUlGmsb6YsSjKpDw2JUsZi23ZsaLmyw65NG4pUFnoXvnUT
+  tags:
+  - improvements
+  version: 0.6.12
+- changelog:
+    de: '- Release-Files schließen nun alle JS-Dateien im `dist` Verzeichnis ein,
+      sowie alle JS und (S)CSS Dateien aus dem `src` Verzeichnis ein.
+
+      '
+    en: '- Release files now include all JS and CSS files from the `dist` and `src`
+      folder.
+
+      '
+  date: '2020-09-11'
+  files:
+  - name: klaro.js
+    sha384: F9cytVT1Z7hA34B70P6zJdu6qB3nDXqrZz/1S58RRmOv7tQKHJcrC/8FNB10plfQ
+  - name: klaro.min.css
+    sha384: lrdVbYPK4A+w7UJ6JOa6glQdQTspZwDGDtR1Z/NJHH9uNOWvhLnjb7zYwiGNlyyz
+  - name: ide.js
+    sha384: sgDxIkAkuckA3hgY/Bi6awsrGGeqgPOk2bTmZBHpW0efB6TkdH2CnpofuOFvZzkP
+  - name: translations.js
+    sha384: 7T7kK/PjOvZ4s7XAckRcUDmfjOItaPhT2QS96RVYVlOEWX+X5dEtNM4KFLAhkCJA
+  - name: klaro-no-translations.js
+    sha384: x93GjmhYclgI1t4gOsYfu0XxBWkNiYNZnwBEaU+mU41v6AkShK8M86t3Msh5j8yA
+  - name: klaro.css
+    sha384: WJ3oj78uTzSYs0/twrjWIyxAtDw7tQduHDwt/gBWW9xgLVMjxxaQJW+tVbSCwmH6
+  - name: cm.js
+    sha384: D+rk+28rzV4LONuSIRWICZ4BMYDv1DMBXeBtA/U1gae5vOzN36ZSNushRS9lZ3QS
+  - name: klaro-no-translations-no-css.js
+    sha384: P8catHVrgSf1V85wYFiTVJFzQDKk+VXpL8ck74kXoFgaC+/cusPM7PE/goykopG8
+  - name: klaro-no-css.js
+    sha384: ccP3Lz4/N8HCllconPf5Y0OZgQDkNnfaE2YgnjAHVjLUBlI1BZgP69ga226Igngc
+  tags:
+  - improvements
+  version: 0.6.11
+- changelog:
+    de: '- Beim Senden anonymer Einwilligungs-Statistiken wird die ID der Konfiguration
+      geschickt statt deren Namen. Dies macht die Einwilligungen direkt einer gegebenen
+      Konfiguration zurechenbar und vereinfach u.a. A/B-Testing.
+
+      '
+    en: '- When sending anonymous consent information, the ID of the consent config
+      is sent instead of the name. This makes the consents directly attributable to
+      a specific config version, making e.g. A/B testing easier.
+
+      '
+  date: '2020-09-10'
+  files:
+  - name: klaro.js
+    sha384: nbofHtYZvAR40gK2D3ejePwFSybsRsLhP7FhRi+qzPg/AKGB5V6yDw2HIfaLAF9u
+  - name: klaro.min.css
+    sha384: lrdVbYPK4A+w7UJ6JOa6glQdQTspZwDGDtR1Z/NJHH9uNOWvhLnjb7zYwiGNlyyz
+  - name: ide.js
+    sha384: sMD6vohzugVjz0U4FS4uZjMluZlBdhAVkZOTqCaLAmIFFevCZKfEcPWDynTjcZP0
+  - name: translations.js
+    sha384: 7T7kK/PjOvZ4s7XAckRcUDmfjOItaPhT2QS96RVYVlOEWX+X5dEtNM4KFLAhkCJA
+  - name: klaro-no-translations.js
+    sha384: ajYd6Co9HmOGDUgNFYl4JgluVLtZGEibXa+fnG3PbopJXu880J9P/PE+n3nIE5Au
+  - name: klaro.css
+    sha384: WJ3oj78uTzSYs0/twrjWIyxAtDw7tQduHDwt/gBWW9xgLVMjxxaQJW+tVbSCwmH6
+  - name: cm.js
+    sha384: D+rk+28rzV4LONuSIRWICZ4BMYDv1DMBXeBtA/U1gae5vOzN36ZSNushRS9lZ3QS
+  - name: klaro-no-translations-no-css.js
+    sha384: 31zKpD0opWQnfXpbwR8Q/F93JLkOlKqfVAppvyte+B9YsPMIc8SGmL1cdFOH1Q86
+  - name: klaro-no-css.js
+    sha384: CCRbRDaDNEBTR98SSFTcgTgEiAJ1x8H44Q6tsp6mlbNjhN8TbvWkP5YK0hhQJFy/
+  tags:
+  - improvements
+  version: 0.6.10
+- changelog:
+    de: '- Kleine Verbesserung des Event-Handler-Codes.
+
+      '
+    en: '- Small improvements in the event handler code.
+
+      '
+  date: '2020-09-10'
+  files:
+  - name: klaro.js
+    sha384: 0IYGq4JONHotcuUgOMPzpCUlP3GqslFlP+p7s9RWWde9Ctwed5lF9QNa9TTyxYlO
+  - name: klaro.min.css
+    sha384: lrdVbYPK4A+w7UJ6JOa6glQdQTspZwDGDtR1Z/NJHH9uNOWvhLnjb7zYwiGNlyyz
+  - name: ide.js
+    sha384: azfZgEP816DlFAQXbS1YuILfRD2e3mkfqbDFo8EYYKKKgAIPrItke400H1Zwoq3F
+  - name: translations.js
+    sha384: ntwPeMPXzodfPgYgzQs6eUMmXoTyZcSDbNxbXw4+fEYWl/VGyJz/fRQQS8oYZ2pb
+  - name: klaro-no-translations.js
+    sha384: 6wcF+zwLZMOivA18/CklJSRIn4jbBu9QS2hpbfagBBD9mcb0sifSoIzdqrvXRl2o
+  - name: klaro.css
+    sha384: WJ3oj78uTzSYs0/twrjWIyxAtDw7tQduHDwt/gBWW9xgLVMjxxaQJW+tVbSCwmH6
+  - name: cm.js
+    sha384: mvcjP6aBoPwaSVHARDqp0wc03QxvgCUUuVmN5AGo5VhzhFNtMTfSv2VcbVPjR3je
+  - name: klaro-no-translations-no-css.js
+    sha384: dVsXeV7Gqm1g/rEljwc5HGGdgtaJCvHwlL3UqL1KgMIlL5Y5YIWQVsnkRMlc6Ywz
+  - name: klaro-no-css.js
+    sha384: IbJq7iBGvOpOZ6Qnt7USWIO/q3xehtbcOM13JkDZuzXtJBQ3i4Ppd0jmiJI1kCWj
+  tags:
+  - improvements
+  version: 0.6.9
+- changelog:
+    de: |
+      - Behebung eines Problems in der anonymen Einwillungserfassung, das dazu führte,
+      dass keine Metriken beim normalen Speichern erfasst wurden.
+    en: |
+      - Fixed a problem with the anonymous consent records that prevented records being
+      sent for the normal "accept" event.
+  date: '2020-09-10'
+  files:
+  - name: klaro.js
+    sha384: Jgrr1oJTt1NotoWpMptP0tQ8mEr13Oi3+rRes79hBgUxTP8RDpEFCtPwEJcLHlR2
+  - name: klaro.min.css
+    sha384: lrdVbYPK4A+w7UJ6JOa6glQdQTspZwDGDtR1Z/NJHH9uNOWvhLnjb7zYwiGNlyyz
+  - name: ide.js
+    sha384: HTOkUlHGpz1/+/2unYCRshzGviET3bOy6Oi6RcIWktKOqykEMu7m28JdLYSIgNWj
+  - name: translations.js
+    sha384: ntwPeMPXzodfPgYgzQs6eUMmXoTyZcSDbNxbXw4+fEYWl/VGyJz/fRQQS8oYZ2pb
+  - name: klaro-no-translations.js
+    sha384: w86AgAUTTDt2bahSwLdTPgp3I6NcPOaXNai+/rXZmDXI6gykFhAMH6tb2KQxqTfb
+  - name: klaro.css
+    sha384: WJ3oj78uTzSYs0/twrjWIyxAtDw7tQduHDwt/gBWW9xgLVMjxxaQJW+tVbSCwmH6
+  - name: cm.js
+    sha384: mvcjP6aBoPwaSVHARDqp0wc03QxvgCUUuVmN5AGo5VhzhFNtMTfSv2VcbVPjR3je
+  - name: klaro-no-translations-no-css.js
+    sha384: iPLF3MdYEU4zoMemAUWHk6BZftvy9JBHozhBZjsXHC5BSzHeHMBrGt7QQupnEhUg
+  - name: config.js
+    sha384: RUAIhuAtuecZdZupmG+8kjlEQ+g4VFstEQWJ+NxLqEW6GQASModYv/jzsbC0lArY
+  - name: klaro-no-css.js
+    sha384: JLluwgBC31vWPbU/rZh/8it3QuLbkmdmLu9elG/JfFCktfJowdrN//KzVpm+SPt9
+  tags:
+  - bugfixes
+  version: 0.6.8
+- changelog:
+    de: |
+      - Bessere Erfassung von Einwilligungen mit optionaler Speicherung des Hostnamens,
+        des Protokolls, des Ports und des Dateipfades, sowie Speicherung von Zustimmungsänderungen.
+      - Vorbereitung der Einbindung der integrierten Klaro-Entwicklungsumgebung zur
+        einfachen und komfortablen Konfiguration
+    en: |
+      - Improved consent records with optional saving of hostname, protocol, port and
+        path as well as consent changes.
+      - Prepared deployment of the Klaro IDE (integrated development environment) that
+        will allow easy configuration of Klaro directly on the website.
+  date: '2020-09-09'
+  files:
+  - name: klaro.js
+    sha384: vXBIWpL2krU4u4WTKWV7vLsrIaS6v7W+jTK6QVSdAvrg+LlSofKDtENiHK94ZpQg
+  - name: klaro.min.css
+    sha384: lrdVbYPK4A+w7UJ6JOa6glQdQTspZwDGDtR1Z/NJHH9uNOWvhLnjb7zYwiGNlyyz
+  - name: ide.js
+    sha384: Yc2gevEq2G83NawwqbLppCP+egRJaSVTCXx75mdGRfYbCAOjBv8c8t5pXk+eUsBG
+  - name: translations.js
+    sha384: ntwPeMPXzodfPgYgzQs6eUMmXoTyZcSDbNxbXw4+fEYWl/VGyJz/fRQQS8oYZ2pb
+  - name: klaro-no-translations.js
+    sha384: rfEnS23uHcY43/4DZO8ulZyRsT3b9s4nQ6cR/pfm0c1fL6RkrfDBqx8fc4Yx0AM3
+  - name: klaro.css
+    sha384: WJ3oj78uTzSYs0/twrjWIyxAtDw7tQduHDwt/gBWW9xgLVMjxxaQJW+tVbSCwmH6
+  - name: cm.js
+    sha384: mvcjP6aBoPwaSVHARDqp0wc03QxvgCUUuVmN5AGo5VhzhFNtMTfSv2VcbVPjR3je
+  - name: klaro-no-translations-no-css.js
+    sha384: oo22W4kFMT1i5S43osmAWVvy+Nnw3g0999CaB87Tq+sVnlVhKz9G9aU+nlfGVpaV
+  - name: config.js
+    sha384: RUAIhuAtuecZdZupmG+8kjlEQ+g4VFstEQWJ+NxLqEW6GQASModYv/jzsbC0lArY
+  - name: klaro-no-css.js
+    sha384: qLcRysCXqHsZfQQ5XDa9d+CmNN7g7YbnTRJU8Br6qWcjiD3jZoZ1RHNDx75FW8a5
+  tags:
+  - improvements
+  version: 0.6.7
+- changelog:
+    de: '- Behebung eines Fehlers bei der Interpretation der Cookie-Konfiguration.
+
+      '
+    en: '- Fixed a problem causing the cookie configuration to not work correctly.
+
+      '
+  date: '2020-09-08'
+  files:
+  - name: klaro-no-translations.js
+    sha384: khK0Y+UbH7nbKRsI74Hrq4AhbYdsB19Fnf0e/IAGr4rHa/X1jqwNJQetrIyoUZuT
+  - name: klaro.js
+    sha384: ctifvBrp90xpvMWZjEk+aXDUa22dg38qOzuF4Cf90NIGdRTmebrBVRe9ZJ29oCN4
+  - name: cm.js
+    sha384: dlfV2q4dMz6dkOPO+sum2m87mMja1QcuAzMzyEJUmvBzg8wYVfHOiM/WA8gUTJxU
+  - name: klaro-no-translations-no-css.js
+    sha384: jRnUkapiq7c9vFkhRq6kkztRuKdyilBn36NpM41YqHkzhQtS9AtU0eloifdSnnW7
+  - name: translations.js
+    sha384: /akYtTJaH+785A45ONYWnEDoYZPercsfaSk9X8+1pmp9NMEYHsIMeLn5+caY9Mj2
+  - name: klaro-no-css.js
+    sha384: GywWA2DAq46gTHMVvL6kIMvnJwvuVj8JcybfYqRCa/3WLFszHRO1PNY/tL8KOFm3
+  - name: klaro.min.css
+    sha384: qTQUfrp7qBwM9yOB7bIjHWtK79zP8oqqLGnjt+Iub0ZQnjjlSCulegXZ12By6WKI
+  - name: config.js
+    sha384: RUAIhuAtuecZdZupmG+8kjlEQ+g4VFstEQWJ+NxLqEW6GQASModYv/jzsbC0lArY
+  - name: klaro.css
+    sha384: u6tRvCQ6BLLZ8kk0GqVlLvjYRG0M7TeDMZwovNKuLlUL8fdYxNz8hwSwcCnWSTtb
+  tags:
+  - bugfixes
+  version: 0.6.6
+- changelog:
+    de: '- Backend-Funktionalität hinzugefügt: Klaro kann optional Konfigurationen
+      von einer API laden und Einwilligungsinformationen (anonym) an eine API senden.
+
+      '
+    en: '- Added support for using an (optional) API backend to retrieve consent configs
+      from and send anonymous consent records to.
+
+      '
+  date: '2020-09-07'
+  files:
+  - name: klaro-no-translations.js
+    sha384: A6KjVbEorUfAIy0emlGy3gYscIhJnwRf5qYrYXLFW6CK5Q+aEHpePvkDJvHCfnjT
+  - name: klaro.js
+    sha384: mj6zgIuT1mEh5Y0w9re97Fgdvwx4U4Ib7LFL7ps0CzzkQ9FcAIf55VDfFeFEsLzq
+  - name: cm.js
+    sha384: 5ed36/SUSR4gnvDvbqy1/k96cbvDQObjXIJM0KBvULpuMbglk6bGkhjEJnxRlLsL
+  - name: klaro-no-translations-no-css.js
+    sha384: EzgRdSG+sHAlnXSmRam5vPlAnHGiL+zQi4BEkKEQw/3X2ZdZUixAUya/VH39leSc
+  - name: translations.js
+    sha384: /akYtTJaH+785A45ONYWnEDoYZPercsfaSk9X8+1pmp9NMEYHsIMeLn5+caY9Mj2
+  - name: klaro-no-css.js
+    sha384: 2EunewXl+GPUDsTNuJxcUawnjclJ46DSOfjDW0IdCpt6j3AqZ0ml+4cAl4eQmOsI
+  - name: klaro.min.css
+    sha384: qTQUfrp7qBwM9yOB7bIjHWtK79zP8oqqLGnjt+Iub0ZQnjjlSCulegXZ12By6WKI
+  - name: config.js
+    sha384: RUAIhuAtuecZdZupmG+8kjlEQ+g4VFstEQWJ+NxLqEW6GQASModYv/jzsbC0lArY
+  - name: klaro.css
+    sha384: u6tRvCQ6BLLZ8kk0GqVlLvjYRG0M7TeDMZwovNKuLlUL8fdYxNz8hwSwcCnWSTtb
+  tags:
+  - improvements
+  version: 0.6.5
+- changelog:
+    de: |
+      - Der Parameter `hideLearnMore` wurde wieder aktiviert, er erlaubt es, den "Anpassen" Link im Hinweisdialog zu entfernen.
+      - In der Beschreibung des Hinweisdialogs kann nun der "Anpassen" Link direkt im Text angezeigt werden.
+      - Das Erscheinungsbild der Buttons im Hinweisdialog auf kleinen Bildschirmen wurde verbessert.
+    en: |
+      - Add back the functionality of the `hideLearnMore` setting, which allows us to hide the "Learn more" link in the consent notice.
+      - Make it possible to show the "Learn more" link directly in the text of the consent notice.
+      - Improve styling of buttons for small screen widths, e.g. small mobile phones.
+  date: '2020-09-07'
+  files:
+  - name: klaro-no-translations.js
+    sha384: 0dFuDDI+JDn2nuvcgN5pvw8lCn3hHmC/ioyH6IpEuxswPqPgXmecdiE5gbWSma4y
+  - name: klaro.js
+    sha384: 9Afw/aLEaRXiptGBsT93Zkp7pIu35+yyNUspYhNSOuw54TJ5Q/oBrVnAUrEcmAtp
+  - name: cm.js
+    sha384: LwDo/Wn2jSwi/ZhQYwgCBS05075wTlho47s26q6HYFI7Q5+kFM2XjIIVvGMcCMsu
+  - name: klaro-no-translations-no-css.js
+    sha384: fJF60PfspHmzoKSN1SuCFJ6tPZPzvt+2snS+L1iPu/2EPFtiuD/jCuMlLEoP9F0T
+  - name: translations.js
+    sha384: /akYtTJaH+785A45ONYWnEDoYZPercsfaSk9X8+1pmp9NMEYHsIMeLn5+caY9Mj2
+  - name: klaro-no-css.js
+    sha384: e/tabwKzHVQkKN51OilOwZl6hhKCcG9v3ZEPjh/rl3u8L6QDXlPhgoQ11WHkGym/
+  - name: klaro.min.css
+    sha384: qTQUfrp7qBwM9yOB7bIjHWtK79zP8oqqLGnjt+Iub0ZQnjjlSCulegXZ12By6WKI
+  - name: config.js
+    sha384: RUAIhuAtuecZdZupmG+8kjlEQ+g4VFstEQWJ+NxLqEW6GQASModYv/jzsbC0lArY
+  - name: klaro.css
+    sha384: u6tRvCQ6BLLZ8kk0GqVlLvjYRG0M7TeDMZwovNKuLlUL8fdYxNz8hwSwcCnWSTtb
+  tags:
+  - improvements
+  - bugfixes
+  version: 0.6.4
+- changelog:
+    de: |
+      - Formatierung der Übersetzungen verbessert und Informationen zu fehlenden Übersetzungs-Strings hinzugefügt.
+      - Klaro-Binärdateien / Distribution-Dateien werden wieder eingeschlossen.
     en: |
       - Improve formatting of translation files and add information about missing translation strings.
       - Include distribution files again.
   date: '2020-08-28'
   files:
   - name: klaro.js
-    sha384: xO4FTg5iKTFd5aN5sCZfk/ZqhwvCZkPeRzC9W8oVgq83e5Xaxk6ftH8oGc9lRjpn
   - name: klaro-no-css.js
-    sha384: 3sz5xrIq1v5WFmxg+L2lrYsOTVImGvMeAhQfkeGg8r4b6VrXr+tgBMhpeVavcKR6
   - name: klaro.css
-    sha384: vFphXTWzAFN+S6Z7xYV5tDfQ4ci+9KocpYqhEE0kRA0nR8C6GXXjE8M9PiGU3Buu
   - name: klaro.min.css
-    sha384: k7h7bPk2c1XRn6nogkUaJQJzbNuWn/KXmrCNrhTSou55v5CGiv7qZjI21a7mA2Af
   tags:
   - improvements
   version: 0.6.3
@@ -31,42 +348,34 @@
   date: '2020-08-20'
   files:
   - name: klaro.js
-    sha384: USWXg92JV6bMyCv6O6hPEE62k8Gh9BwqZ6Iicgek6Bbbxyl7oqYeeLqrERj45R1+
   - name: klaro-no-css.js
-    sha384: 6z7+GsA29ZSFWEnFDQuB7yuHuIlBgfb2OHDfzZGxdbct6/78nf1+m7lvEwywdg5R
   - name: klaro.css
-    sha384: VKPhuq8La650JHoOiCXTu3llxZonACf0mLouoJhRZ1p7Lvwnw1xe4hKNKwNEIb2f
   - name: klaro.min.css
-    sha384: +jGibyKXmqMvdbD1lf3ocmXSh7lPdUzo6Qbs4oMOHf/VKMCK3dBxvHf/rUWlDIqQ
   tags:
   - improvements
   version: 0.6.2
 - changelog:
-    de: "- Das `lang` Attribut des Klaro div-Elements enth\xE4lt nun die aktuell eingestellte\
-      \ Sprach Sprache f\xFCr Klaro, was z.B. die Anpassung von Stylesheets basierend\
-      \ auf der gew\xE4hlten Sprache einfacher macht.\n- Der `additionalClass` Parameter\
-      \ wurde hinzugef\xFCgt, \xFCber welchem dem Klaro-Element zus\xE4tzliche CSS-Klassen\
-      \ zugewiesen werden k\xF6nnen.\n"
+    de: |
+      - Das `lang` Attribut des Klaro div-Elements enthält nun die aktuell eingestellte Sprach Sprache für Klaro, was z.B. die Anpassung von Stylesheets basierend auf der gewählten Sprache einfacher macht.
+      - Der `additionalClass` Parameter wurde hinzugefügt, über welchem dem Klaro-Element zusätzliche CSS-Klassen zugewiesen werden können.
     en: |
       - Added the language as a `lang` attribute to the Klaro div, to make it easier to e.g. change Klaro's style depending on the language via CSS selectors.
       - Added the `additionalClass` option, which allows adding additional class names to the Klaro div via the config.
   date: '2020-08-20'
   files:
   - name: klaro.js
-    sha384: 5IfUNVqTQnyIAur+Mw4sThiybc8Ly4nXAJKrM5NZMY9BnLD4eAT24i4oXu8I9V7O
   - name: klaro-no-css.js
-    sha384: Pz0TSe74Sm9l733pN1oXSnJu+D93F35SeLphDz7otiRcNwx3Oy67iaZ6/twgYoJm
   - name: klaro.css
-    sha384: VKPhuq8La650JHoOiCXTu3llxZonACf0mLouoJhRZ1p7Lvwnw1xe4hKNKwNEIb2f
   - name: klaro.min.css
-    sha384: +jGibyKXmqMvdbD1lf3ocmXSh7lPdUzo6Qbs4oMOHf/VKMCK3dBxvHf/rUWlDIqQ
   tags:
   - improvements
   version: 0.6.1
 - changelog:
-    de: "- `noticeAsModal` Parameter hinzugef\xFCgt, der das Einwilligungs-Hinweisfenster\
-      \ als modales Fenster darstellt und den Nutzer dazu zwingt, eine Entscheidung\
-      \ zu treffen bevor die Seite genutzt werden kann.\n"
+    de: '- `noticeAsModal` Parameter hinzugefügt, der das Einwilligungs-Hinweisfenster
+      als modales Fenster darstellt und den Nutzer dazu zwingt, eine Entscheidung
+      zu treffen bevor die Seite genutzt werden kann.
+
+      '
     en: '- Added `noticeAsModal` option, which will display the consent notice as
       a modal window, forcing the user to make a consent choice before proceeding
       to the page.
@@ -75,20 +384,18 @@
   date: '2020-08-20'
   files:
   - name: klaro.js
-    sha384: GVX54TCeTqG19jr5VY+vMAdER8BkYzdA2iUnBcK6cUXr392L/7LpZmWJMUK7CeKy
   - name: klaro-no-css.js
-    sha384: 8NnjFFT4CwSGMIhIhMv/MphhMlD1TQWUgI67CjGNdSNZhzij7BWSqJo4fOq9fuJG
   - name: klaro.css
-    sha384: sVdM1Fly+2nRlEkRMxZDTW3sL2sK5f0lZElVwBpWoPrvcgJOichFyJoPOddmTMWp
   - name: klaro.min.css
-    sha384: Ly1idixnFbQClNsisagBZ+05p+WH763BIqcm9P5pH2hW1nl2+iWL+j32ZotyI4/H
   tags:
   - improvements
   version: 0.6.0
 - changelog:
-    de: "- Cookie-Attribute `SameSite=Lax` wird gesetzt um modernen Cookie-Richtlinien\
-      \ zu entsprechen. Siehe [MDN](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Set-Cookie/SameSite)\
-      \ f\xFCr eine technische Erl\xE4uterung.\n"
+    de: '- Cookie-Attribute `SameSite=Lax` wird gesetzt um modernen Cookie-Richtlinien
+      zu entsprechen. Siehe [MDN](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Set-Cookie/SameSite)
+      für eine technische Erläuterung.
+
+      '
     en: '- Added `SameSite=Lax` to the Klaro cookie in order to conform to upcoming
       changes in cookie handling by browsers. See [MDN](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Set-Cookie/SameSite)
       for details.
@@ -97,38 +404,33 @@
   date: '2020-08-20'
   files:
   - name: klaro.js
-    sha384: Nhyxu4sY0ISWN96elOfgGIw9VC4+2LTgaNt+BhIWxZw03oJP7l0Qt6+pGS8hM9R/
   - name: klaro-no-css.js
-    sha384: fpnmywpkyetRiKNzIljgtRm/GaCAUQOblxiwIIgvb1VMXZW8T8b8SkN5Y2JJxuuk
   - name: klaro.css
-    sha384: xg8GMoKbgoIpGsz5zlT2uaE32C3uSXf9LBq4nyuuO0UXV6TdVqHuighBZ6zbHW9a
   - name: klaro.min.css
-    sha384: DrOw4gL/VNX7xCyvlq1pMAYMCd3846FY7Hy7Wlx8+ct5cWCj91hZLesjV+g6wkPN
   tags:
   - improvements
   version: 0.5.35
 - changelog:
-    de: "- Ein Fehler in der `klaro.resetManagers()` Funktion wurde behoben.\n- Beim\
-      \ Kopieren eines `script` Elements werden nun alle Attribute \xFCbernommen.\n"
+    de: |
+      - Ein Fehler in der `klaro.resetManagers()` Funktion wurde behoben.
+      - Beim Kopieren eines `script` Elements werden nun alle Attribute übernommen.
     en: |
       - Fixed a problem with the `klaro.resetManagers()` function.
       - Ensured that all attributes of a `script` element are copied over.
   date: '2020-08-20'
   files:
   - name: klaro.js
-    sha384: IiDYC3fI6JblzD9VGQe7RsWHfHaUmMdxrQnUpTboXO6iFm4oJBu6oScMrUdFcD5a
   - name: klaro-no-css.js
-    sha384: 0XVBT/QbaIDG+T+E0VjWS1G8ugSJNFhsZB7QXq4Q5jotPtMJmD0ZZgxvLjbC41uQ
   - name: klaro.css
-    sha384: xg8GMoKbgoIpGsz5zlT2uaE32C3uSXf9LBq4nyuuO0UXV6TdVqHuighBZ6zbHW9a
   - name: klaro.min.css
-    sha384: DrOw4gL/VNX7xCyvlq1pMAYMCd3846FY7Hy7Wlx8+ct5cWCj91hZLesjV+g6wkPN
   tags:
   - bugfixes
   version: 0.5.34
 - changelog:
-    de: "- Maximale Gr\xF6\xDFe der Einwilligungs-Notiz auf `360px` erh\xF6ht, damit\
-      \ Text in den Buttons nicht gebrochen wird.\n"
+    de: '- Maximale Größe der Einwilligungs-Notiz auf `360px` erhöht, damit Text in
+      den Buttons nicht gebrochen wird.
+
+      '
     en: '- Increased the maximum width of the consent notice to `360px` to allow languages
       with longer translations to display the buttons without wrapping text.
 
@@ -136,33 +438,19 @@
   date: '2020-08-17'
   files:
   - name: klaro.js
-    sha384: 1toJX9xehV/Un8VpF1DPnHtVRcijc4wjI8c/jFpzRIuzR9M/F2IO5D66Y8JwkUny
   - name: klaro-no-css.js
-    sha384: xjXIU23iXo6K0/hi0XcYkL8kLixq2fPB+cGXsp3ee5A33OMbHRsr7QVFLAcHwCp7
   - name: klaro.css
-    sha384: xg8GMoKbgoIpGsz5zlT2uaE32C3uSXf9LBq4nyuuO0UXV6TdVqHuighBZ6zbHW9a
   - name: klaro.min.css
-    sha384: DrOw4gL/VNX7xCyvlq1pMAYMCd3846FY7Hy7Wlx8+ct5cWCj91hZLesjV+g6wkPN
   tags:
   - improvements
   version: 0.5.33
 - changelog:
-    de: "- Die `extraHTML`-Felder wurden aus den Feldern `extraHTML` im Zustimmungsmodus\
-      \ und in der Zustimmungsmitteilung entfernt, um HTML in Beschreibungen generell\
-      \ zuzulassen. Sie k\xF6nnen jetzt `htmlTexts: true` in der Konfiguration einstellen,\
-      \ was Klaro anweist, die von Ihnen bereitgestellten \xDCbersetzungsstrings als\
-      \ HTML-Inhalt zu rendern. Wenn eine bestimmte Zeichenfolge nicht mit einer \xF6\
-      ffnenden Klammer (&lt;) beginnt, wird Klaro den resultierenden HTML/Text trotzdem\
-      \ innerhalb eines Absatzes (&lt;p&gt;...&lt;/p&gt;) einf\xFCgen, andernfalls\
-      \ wird er \"so wie er ist\" dargestellt.\n\nWir hoffen, dass diese \xC4nderung\
-      \ es einfacher macht, das Erscheinungsbild der Einverst\xE4ndniserkl\xE4rung\
-      \ und des Modals anzupassen, ohne auf zus\xE4tzliche Konfigurationsparameter\
-      \ zur\xFCckgreifen zu m\xFCssen. Wenn wir uns entscheiden, HTML an mehr Stellen\
-      \ zu unterst\xFCtzen, k\xF6nnen wir das tun, ohne das Konfigurationsformat erneut\
-      \ zu brechen.\n\nWir entschuldigen uns f\xFCr die Einf\xFChrung einer brechenden\
-      \ Konfigurations\xE4nderung, da die Option `extraHTML` zu Beginn recht neu war,\
-      \ die \xC4nderung sollte nicht viele Benutzer betreffen und wir denken, dass\
-      \ sie auf lange Sicht von Vorteil sein wird.\n"
+    de: |
+      - Die `extraHTML`-Felder wurden aus den Feldern `extraHTML` im Zustimmungsmodus und in der Zustimmungsmitteilung entfernt, um HTML in Beschreibungen generell zuzulassen. Sie können jetzt `htmlTexts: true` in der Konfiguration einstellen, was Klaro anweist, die von Ihnen bereitgestellten Übersetzungsstrings als HTML-Inhalt zu rendern. Wenn eine bestimmte Zeichenfolge nicht mit einer öffnenden Klammer (&lt;) beginnt, wird Klaro den resultierenden HTML/Text trotzdem innerhalb eines Absatzes (&lt;p&gt;...&lt;/p&gt;) einfügen, andernfalls wird er "so wie er ist" dargestellt.
+
+      Wir hoffen, dass diese Änderung es einfacher macht, das Erscheinungsbild der Einverständniserklärung und des Modals anzupassen, ohne auf zusätzliche Konfigurationsparameter zurückgreifen zu müssen. Wenn wir uns entscheiden, HTML an mehr Stellen zu unterstützen, können wir das tun, ohne das Konfigurationsformat erneut zu brechen.
+
+      Wir entschuldigen uns für die Einführung einer brechenden Konfigurationsänderung, da die Option `extraHTML` zu Beginn recht neu war, die Änderung sollte nicht viele Benutzer betreffen und wir denken, dass sie auf lange Sicht von Vorteil sein wird.
     en: |
       - Removed the `extraHTML` fields from the consent modal and consent notice in favor of allowing HTML in descriptions in general. You can now set `htmlTexts: true` in the config, which will tell Klaro to render the translation strings you provide as HTML content. If a given string does not start with an opening bracket (&lt;), Klaro will still put the resulting HTML/text inside a paragraph (&lt;p&gt;...&lt;/p&gt;), otherwise it will render it "as is".
 
@@ -172,21 +460,19 @@
   date: '2020-08-14'
   files:
   - name: klaro.js
-    sha384: 889r8fDciDo/zkX0RKjU8p17x4c/arkMU0+WH53KqrXCMgtxYvuj0GnjfXMCuzhL
   - name: klaro-no-css.js
-    sha384: TqaFiw8Ch6ulxWmiViaHaDRv9JEQfb9D521Cq4+GSOByeS4yhMpEUW3oQ92qOSE/
   - name: klaro.css
-    sha384: tbf2NICL7nx5zh66H4OrYGTczwXc6/1w51ZjxSLaAIl2ERaL3mQNlPIWQinfmVBt
   - name: klaro.min.css
-    sha384: sjtRFcm3jGi9/4DfWaFKNAerz5hPylltJzRgFPiNpk5pXN1FM8yMGTfNfFV9KPIH
   tags:
   - breaking-changes
   - feature-update
   version: 0.5.32
 - changelog:
-    de: "- Pr\xFCfsummen zu allen lokal erzeugten Builddateien hinzugef\xFCgt, z.B.\
-      \ zur Verwendung als Subresource-Integrity-Tags. Siehe [MDN](https://developer.mozilla.org/en-US/docs/Web/Security/Subresource_Integrity)\
-      \ f\xFCr weitere Einzelheiten hierzu.\n"
+    de: '- Prüfsummen zu allen lokal erzeugten Builddateien hinzugefügt, z.B. zur
+      Verwendung als Subresource-Integrity-Tags. Siehe [MDN](https://developer.mozilla.org/en-US/docs/Web/Security/Subresource_Integrity)
+      für weitere Einzelheiten hierzu.
+
+      '
     en: '- Added checksums to all build files generated locally, for use e.g. as subresource
       integrity tags. See [MDN](https://developer.mozilla.org/en-US/docs/Web/Security/Subresource_Integrity)
       for more details about this.
@@ -195,21 +481,19 @@
   date: '2020-08-12'
   files:
   - name: klaro.js
-    sha384: h9VDPFe9V4GF58KI49VFuJCI2z80m/rkrH+DbzhiVY7FnZTYEtv9TFg/w1p5pz5y
   - name: klaro-no-css.js
-    sha384: f26eXjeGZ1wSuLSJ4zJuh6xSWFaXFGlBV1B65IemIqg21vKot0Ik8IrEfVaOmdOj
   - name: klaro.css
-    sha384: tbf2NICL7nx5zh66H4OrYGTczwXc6/1w51ZjxSLaAIl2ERaL3mQNlPIWQinfmVBt
   - name: klaro.min.css
-    sha384: sjtRFcm3jGi9/4DfWaFKNAerz5hPylltJzRgFPiNpk5pXN1FM8yMGTfNfFV9KPIH
   tags: []
   version: 0.5.31
 - changelog:
-    de: "- Es wurde die Konfigurationsoption `groupByPurpose` hinzugef\xFCgt, die\
-      \ Anwendungen nach ihrem Zweck in Kategorien gruppiert und es dem Benutzer erlaubt,\
-      \ ganze Gruppen von Anwendungen auf einmal zu aktivieren oder zu deaktivieren.\
-      \ Dies reduziert auch den Platzbedarf des Modals, was besonders f\xFCr Websites\
-      \ wichtig ist, die viele Anwendungen von Drittanbietern verwenden.\n"
+    de: '- Es wurde die Konfigurationsoption `groupByPurpose` hinzugefügt, die Anwendungen
+      nach ihrem Zweck in Kategorien gruppiert und es dem Benutzer erlaubt, ganze
+      Gruppen von Anwendungen auf einmal zu aktivieren oder zu deaktivieren. Dies
+      reduziert auch den Platzbedarf des Modals, was besonders für Websites wichtig
+      ist, die viele Anwendungen von Drittanbietern verwenden.
+
+      '
     en: '- Added the `groupByPurpose` config option, which groups apps into categories
       based on their purpose, allowing the user to enable or disable entire groups
       of apps at once. This also reduces the space taken up by the modal, which is

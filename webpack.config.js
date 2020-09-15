@@ -22,7 +22,7 @@ let config = {
   context: SRC_DIR,
   resolve: {
     symlinks: false,
-    extensions: ['.js', '.jsx'],
+    extensions: ['.jsx', '.js'],
     modules: [
       SRC_DIR,
       "node_modules"
@@ -54,6 +54,7 @@ let config = {
     // main Klaro files are defined below as they require special naming rules
     'cm': SRC_DIR + '/consent-manager.js',
     'translations' : SRC_DIR+'/translations.js',
+    ide: SRC_DIR +'/ide.js',
   },
   output: {
     path: BUILD_DIR,
@@ -149,6 +150,13 @@ if (APP_DEV_MODE === 'server') {
           target: 'http://localhost:5000/',
           secure: false
         }
+      },
+
+      // we enable CORS requests (useful for testing)
+      headers: {
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, PATCH, OPTIONS",
+        "Access-Control-Allow-Headers": "X-Requested-With, content-type, Authorization"
       },
 
       disableHostCheck: true

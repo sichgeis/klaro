@@ -1,11 +1,14 @@
-@import '_modal';
-@import '_vars';
+@import 'modal';
+@import 'vars';
 
 .klaro {
+
+    $btn-margin-right: 0.5em;
+
     .cookie-modal,
     .cookie-notice {
 
-        @import '_switch';
+        @import 'switch';
 
         font-size: 14px;
 
@@ -50,7 +53,7 @@
             color: $font-color-dark;
             border-radius: 6px;
             padding: 6px 10px;
-            margin-right: 0.5em;
+            margin-right: $btn-margin-right;
             border: 0;
             padding: 0.4em;
             font-size: 1em;
@@ -93,7 +96,7 @@
             right: inherit;
             z-index: 0;
 
-            .cm-modal {
+            .cm-modal.cm-klaro {
                 position: relative;
                 transform: none;
             }
@@ -109,8 +112,9 @@
         }
 
         .cm-modal {
-
-            @include modal(800px, 640px);
+            &.cm-klaro {
+                @include modal(660px, 640px);            
+            }
 
             .hide {
                 border-style: none;
@@ -301,15 +305,43 @@
 
             .cn-learn-more {
                 display: inline-block;
+                flex-grow: 1;
+            }
+
+            .cn-buttons {
+                display: inline-block;
+                margin-top: -0.5em;
+
+                @media(max-width: $tiny-mobile-width) {
+                    width: 100%;
+                }
+
+                button.cm-btn {
+                    margin-top: 0.5em;
+
+                    @media(max-width: $tiny-mobile-width) {
+                        width: calc(50% - #{$btn-margin-right});
+                    }
+                }
+
             }
 
             .cn-ok {
+
+                // we add a margin that cancels out unless the items are wrapped
+                // in which case it will add some spacing between them
+                margin-top: -0.5em;
                 display: flex;
                 flex-flow: row;
-                justify-content: space-between;
+                flex-wrap: wrap;
+                justify-content: right;
                 align-items: center;
 
-                margin-top: 1em;
+                a,
+                div {
+                    margin-top: 0.5em;
+                }
+
             }
         }
     }

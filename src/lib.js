@@ -1,15 +1,19 @@
 /* globals module, require, VERSION */
 import React from 'react'
-import App from 'components/app.js'
-import ConsentManager from 'consent-manager'
-import {render} from 'react-dom'
-import {convertToMap, update} from 'utils/maps'
-import {t, language} from 'utils/i18n'
-import {currentScript} from 'utils/compat'
-export {update as updateConfig} from 'utils/config'
+import App from './components/app'
+import ConsentManager from './consent-manager'
+import KlaroApi from './utils/api';
+import {render as reactRender} from 'react-dom'
+import {convertToMap, update} from './utils/maps'
+import {t, language} from './utils/i18n'
+import {currentScript} from './utils/compat'
+export {update as updateConfig} from './utils/config'
+import './scss/klaro.scss'
 
 let defaultConfig
-let defaultTranslations = new Map([])
+const defaultTranslations = new Map([])
+const eventHandlers = {}
+const events = {}
 
 // IE compatibility
 if (window.btoa === undefined)
@@ -20,12 +24,12 @@ if (window.btoa === undefined)
 if(module.hot)
     require('preact/debug')
 
-function getElementID(config){
-    return config.elementID || 'klaro'
+export function getElementID(config, ide){
+    return (config.elementID || 'klaro') + (ide ? '-ide' : '')
 }
 
-function getElement(config){
-    const id = getElementID(config)
+export function getElement(config, ide){
+    const id = getElementID(config, ide)
     let element = document.getElementById(id)
     if (element === null){
         element = document.createElement('div')
@@ -33,6 +37,31 @@ function getElement(config){
         document.body.appendChild(element)
     }
     return element
+}
+
+export function addEventListener(eventType, handler){
+    if (eventHandlers[eventType] === undefined)
+        eventHandlers[eventType] = [handler]
+    else
+        eventHandlers[eventType].push(handler)
+    // this event did already fire, we call the handler
+    if (events[eventType] !== undefined)
+        for(const event of events[eventType])
+            if (handler(...event) === false)
+                break
+}
+
+function executeEventHandlers(eventType, ...args){
+    const handlers = eventHandlers[eventType]
+    if (events[eventType] === undefined)
+        events[eventType] = [args]
+    else
+        events[eventType].push(args)
+    if (handlers !== undefined)
+        for(const handler of handlers){
+            if (handler(...args) === true)
+                return true
+        }
 }
 
 export function getConfigTranslations(config){
@@ -43,57 +72,113 @@ export function getConfigTranslations(config){
 }
 
 let cnt = 1
-export function renderKlaro(config, show, modal){
+export function render(config, opts){
     if (config === undefined)
         return
+    opts = opts || {}
+
+    executeEventHandlers("render", config, opts)
 
     // we are using a count here so that we're able to repeatedly open the modal...
     let showCnt = 0
-    if (show)
+    if (opts.show)
         showCnt = cnt++
     const element = getElement(config)
     const manager = getManager(config)
-    const lang = config.lang || language()
+
+    if (opts.api !== undefined)
+        manager.watch(opts.api)
+
+    const lang = language(config.lang)
     const configTranslations = getConfigTranslations(config)
     const tt = (...args) => t(configTranslations, lang, config.fallbackLang || 'en', ...args)
-    const app = render(<App t={tt}
+    const app = reactRender(<App t={tt}
         lang={lang}
         manager={manager}
         config={config}
-        modal={modal}
+        modal={opts.modal}
+        api={opts.api}
         show={showCnt} />, element)
     return app
+}
+
+function showKlaroIDE(script) {
+    const baseName = /^(.*)(\/[^/]+)$/.exec(script.src)[1] || ''
+    const element = document.createElement('script')
+    element.src = baseName !== '' ? baseName + '/ide.js' : 'ide.js'
+    element.type = "application/javascript"
+    for(const attribute of element.attributes){
+        element.setAttribute(attribute.name, attribute.value)
+    }
+    document.head.appendChild(element)
+}
+
+
+function doOnceLoaded(handler){
+    if (/complete|interactive|loaded/.test(document.readyState)){
+        handler()
+    } else {
+        window.addEventListener('DOMContentLoaded', handler)
+    }
 }
 
 export function setup(){
     const script = currentScript("klaro");
     if (script !== undefined){
         const configName = script.getAttribute('data-config') || "klaroConfig"
-        defaultConfig = window[configName]
-        if (defaultConfig !== undefined){
+        const klaroId = script.getAttribute('data-klaro-id')
+        const klaroConfigName = script.getAttribute('data-klaro-config-name') || "default"
+        const klaroApiUrl = script.getAttribute('data-klaro-api-url') || 'https://api.kiprotect.com'
+        if (klaroId !== null){
+            const api = new KlaroApi(klaroApiUrl, klaroId)
+            api.loadConfig(klaroConfigName).then((config) => {
 
-            // deprecated: config settings should only be loaded via the config
-            const scriptStylePrefix = script.getAttribute('data-style-prefix')
-            const scriptNoAutoLoad = script.getAttribute('data-no-auto-load') === "true"
-            if (scriptStylePrefix === undefined)
-                defaultConfig.stylePrefix = scriptStylePrefix
+                if (executeEventHandlers("apiConfigsLoaded", [config], api) === true){
+                    return
+                }
+                defaultConfig = config
 
-            if (scriptNoAutoLoad)
-                defaultConfig.noAutoLoad = true
+                const initialize = () => {
+                    if (!defaultConfig.noAutoLoad)
+                        render(defaultConfig, {api: api})
+                }
+                doOnceLoaded(initialize)
 
-            const initialize = () => {
-                if (!defaultConfig.noAutoLoad)
-                    renderKlaro(defaultConfig)
+            }).catch((err) => {
+                console.error(err, "cannot load Klaro configs")
+                executeEventHandlers("apiConfigsFailed", err)
+            })
+        } else {
+            defaultConfig = window[configName]
+            if (defaultConfig !== undefined){
+
+                // deprecated: config settings should only be loaded via the config
+                const scriptStylePrefix = script.getAttribute('data-style-prefix')
+                const scriptNoAutoLoad = script.getAttribute('data-no-auto-load') === "true"
+                if (scriptStylePrefix === undefined)
+                    defaultConfig.stylePrefix = scriptStylePrefix
+
+                if (scriptNoAutoLoad)
+                    defaultConfig.noAutoLoad = true
+
+                const initialize = () => {
+                    if (!defaultConfig.noAutoLoad)
+                        render(defaultConfig)
+                }
+                doOnceLoaded(initialize)
             }
-
-            window.addEventListener('DOMContentLoaded', initialize)
+        }
+        const showIDE = location.hash === '#klaro-ide'
+        // we show the Klaro IDE
+        if (showIDE){
+            showKlaroIDE(script)
         }
     }
 }
 
-export function show(config, modal){
+export function show(config, modal, api){
     config = config || defaultConfig
-    renderKlaro(config, true, modal)
+    render(config, {show: true, modal: modal, api: api})
     return false
 }
 

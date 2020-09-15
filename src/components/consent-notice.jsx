@@ -1,8 +1,8 @@
 import React from 'react'
 import ConsentModal from './consent-modal'
-import {getPurposes} from 'utils/config'
+import {getPurposes} from '../utils/config'
 import Text from './text'
-import {language} from 'utils/i18n'
+import {language} from '../utils/i18n'
 
 export default class ConsentNotice extends React.Component {
 
@@ -19,7 +19,7 @@ export default class ConsentNotice extends React.Component {
             this.setState({modal: this.props.modal})
     }
 
-    executeButtonClicked = (setChangedAll, changedAllValue) => {
+    executeButtonClicked = (setChangedAll, changedAllValue, eventType) => {
         const {modal} = this.state
         let changedApps = 0
         if (setChangedAll)
@@ -27,7 +27,7 @@ export default class ConsentNotice extends React.Component {
         const confirmed = this.props.manager.confirmed
         const saveAndHide = () => {
             this.setState({confirming: false})
-            this.props.manager.saveAndApplyConsents()
+            this.props.manager.saveAndApplyConsents(eventType)
             this.props.hide()
         }
         if (setChangedAll && !confirmed && (modal || this.props.config.mustConsent)){
@@ -41,21 +41,21 @@ export default class ConsentNotice extends React.Component {
     }
 
     saveAndHide = () => {
-        this.executeButtonClicked(false, false)
+        this.executeButtonClicked(false, false, 'save')
     }
 
     acceptAndHide = () => {
-        this.executeButtonClicked(true, true)
+        this.executeButtonClicked(true, true, 'accept')
     }
 
     declineAndHide = () => {
-        this.executeButtonClicked(true, false)
+        this.executeButtonClicked(true, false, 'decline')
     }
 
     render(){
         const {config, show, manager, t} = this.props
         const { modal, confirming } = this.state
-        const {embedded, noticeAsModal} = config
+        const {embedded, noticeAsModal, hideLearnMore } = config
 
         const purposes = getPurposes(config)
         const purposesText = purposes.map((purpose) => t(['purposes', purpose, 'title?'])).join(", ")
@@ -104,10 +104,10 @@ export default class ConsentNotice extends React.Component {
             :
             <button className="cm-btn cm-btn-success" type="button" onClick={this.saveAndHide}>{t(['ok'])}</button>
 
-        const learnMoreLink = noticeAsModal ?
-            <button className="cm-btn cm-btn-lern-more cm-btn-info" type="button" onClick={showModal}>{t(['consentNotice', 'configure'])}</button>
+        const learnMoreLink = (extraText) => (noticeAsModal ?
+            <button className="cm-btn cm-btn-lern-more cm-btn-info" type="button" onClick={showModal}>{t(['consentNotice', 'configure'])}{extraText}</button>
             :
-            <a className="cm-link cm-learn-more" href="#" onClick={showModal}>{t(['consentNotice', 'learnMore'])}</a>
+            <a className="cm-link cn-learn-more" href="#" onClick={showModal}>{t(['consentNotice', 'learnMore'])}{extraText}</a>)
 
         let ppLink
 
@@ -118,10 +118,10 @@ export default class ConsentNotice extends React.Component {
             return <ConsentModal t={t} confirming={confirming} config={config} hide={hideModal} declineAndHide={this.declineAndHide} saveAndHide={this.saveAndHide} acceptAndHide={this.acceptAndHide} manager={manager} />
         const notice = <div className={`cookie-notice ${!noticeIsVisible ? 'cookie-notice-hidden' : ''} ${noticeAsModal ? 'cookie-modal-notice' : ''} ${embedded ? 'cn-embedded' : ''}`}>
             <div className="cn-body">
-                <Text config={config} text={t(['consentNotice', 'description'], {purposes: <strong>{purposesText}</strong>, privacyPolicy: ppLink, learnMoreLink: learnMoreLink })} />
+                <Text config={config} text={t(['consentNotice', 'description'], {purposes: <strong>{purposesText}</strong>, privacyPolicy: ppLink, learnMoreLink: learnMoreLink() })} />
                 {changesText}
                 <div className="cn-ok">
-                    {learnMoreLink}
+                    {!hideLearnMore && learnMoreLink('...')}
        	   	        <div className="cn-buttons">
                         	{declineButton}
                         	{acceptButton}
